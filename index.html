@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>منيو العصائر</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- الصفحة الرئيسية -->
+
+    <header class="hero">
+<div class="language-switcher">
+
+    <button
+        type="button"
+        id="arabic-button"
+        onclick="setLanguage('ar')">
+        🇱🇾 عربي
+    </button>
+
+    <button
+        type="button"
+        id="english-button"
+        onclick="setLanguage('en')">
+        🇬🇧 English
+    </button>
+
+</div>
+        <div class="logo">
+    ROASTEN
+</div>
+
+<h1>
+    روستن
+</h1>
+
+<p>
+    عصائر ومشروبات بطابع خاص
+</p>
+
+        <button
+            class="hero-button"
+            onclick="scrollToMenu()">
+
+            عرض المنيو
+
+        </button>
+
+    </header>
+
+
+
+    <!-- المنيو -->
+
+    <main id="menu">
+
+        <h2>
+            قائمة العصائر
+        </h2>
+
+
+        <!-- التصنيفات -->
+
+        <div class="categories">
+
+    <button onclick="showCategory('smoothie')">
+        سموثي
+    </button>
+
+    <button onclick="showCategory('fresh')">
+        عصائر طازجة
+    </button>
+
+    <button onclick="showCategory('mojito')">
+        موخيتو
+    </button>
+
+    <button onclick="showCategory('special')">
+        خلطات خاصة
+    </button>
+
+    <button onclick="showCategory('nescafe')">
+        نسكافيه
+    </button>
+
+    <button onclick="showCategory('custom')">
+        حسب الطلب
+    </button>
+
+</div>
+
+<div class="search-box">
+
+    <input
+        type="search"
+        id="search-input"
+        placeholder="🔍 ابحث عن العصير..."
+        oninput="searchProducts()">
+
+</div>
+
+        <!-- المنتجات -->
+
+        <section id="products"></section>
+
+
+
+        <!-- السلة -->
+
+        <div class="cart">
+
+            <h2>
+                طلبك
+            </h2>
+
+
+            <div id="cart-items">
+
+                لا توجد منتجات
+
+            </div>
+
+
+            <div class="cart-total">
+
+                المجموع:
+
+                <span id="total">
+                    0
+                </span>
+
+                LYD
+
+            </div>
+
+
+
+            <!-- بيانات الطلب -->
+
+            <div class="order-form">
+
+
+                <label for="customer-name">
+                    الاسم
+                </label>
+
+                <input
+                    type="text"
+                    id="customer-name"
+                    placeholder="اكتب اسمك">
+
+
+
+                <label for="customer-phone">
+    رقم الهاتف
+</label>
+
+<input
+    type="tel"
+    id="customer-phone"
+    placeholder="مثلاً 0912345678">
+
+
+
+                <label for="order-notes">
+                    ملاحظات
+                </label>
+
+                <textarea
+                    id="order-notes"
+                    placeholder="مثلاً بدون سكر، ثلج قليل...">
+                </textarea>
+
+
+
+                <!-- زر WhatsApp -->
+
+                <button
+                    type="button"
+                    id="whatsapp-button"
+                    class="order-button">
+
+                    إرسال الطلب عبر WhatsApp
+
+                </button>
+
+
+            </div>
+<div id="order-confirmation" class="order-confirmation">
+
+    <div class="confirmation-box">
+
+        <button
+            type="button"
+            class="close-confirmation"
+            onclick="closeOrderConfirmation()">
+            ×
+        </button>
+
+        <h2>
+            تأكيد طلبك
+        </h2>
+
+        <div class="order-number">
+            رقم الطلب:
+            <strong id="confirmation-order-number">
+                -
+            </strong>
+        </div>
+
+        <div id="confirmation-items">
+        </div>
+
+        <div class="confirmation-total">
+            الإجمالي:
+            <strong id="confirmation-total">
+                0 LYD
+            </strong>
+        </div>
+
+        <div class="confirmation-actions">
+
+            <button
+                type="button"
+                class="edit-order-button"
+                onclick="closeOrderConfirmation()">
+                تعديل الطلب
+            </button>
+
+            <button
+                type="button"
+                class="confirm-order-button"
+                onclick="confirmAndSendOrder()">
+                تأكيد وإرسال WhatsApp
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+        </div>
+
+    </main>
+
+
+
+    <!-- JavaScript -->
+
+
+<!-- السلة العائمة -->
+
+<button
+    id="floating-cart"
+    class="floating-cart"
+    type="button"
+    onclick="scrollToCart()">
+
+    🛒
+    <span id="floating-cart-text">
+        طلبك
+    </span>
+
+</button>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

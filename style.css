@@ -1,0 +1,1265 @@
+/* =========================
+   ROASTEN JUICE MENU
+   ========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f7f3;
+    color: #202020;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 72vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #101010,
+            #292929
+        );
+
+    color: white;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* تأثير ضوء خلف الشعار */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    background: rgba(255,255,255,0.05);
+
+    border-radius: 50%;
+
+    top: -150px;
+    left: -100px;
+}
+
+
+/* الشعار */
+
+.logo {
+    width: 125px;
+    height: 125px;
+
+    border-radius: 50%;
+
+    background: white;
+    color: #111;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 28px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.3);
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.hero h1 {
+    font-size: 46px;
+    font-weight: 800;
+
+    margin-bottom: 8px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.hero p {
+    font-size: 18px;
+
+    color: #d8d8d8;
+
+    margin-bottom: 30px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* زر عرض المنيو */
+
+.hero-button {
+    border: none;
+
+    background: white;
+    color: #111;
+
+    padding: 14px 32px;
+
+    border-radius: 50px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.hero-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.25);
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 55px 20px;
+}
+
+
+main > h2 {
+    text-align: center;
+
+    font-size: 32px;
+
+    margin-bottom: 30px;
+
+    font-weight: 800;
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories {
+
+    display: flex;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    padding: 5px 3px 15px;
+
+    margin-bottom: 35px;
+
+    scrollbar-width: none;
+}
+
+.categories::-webkit-scrollbar {
+    display: none;
+}
+
+
+.categories button {
+
+    flex-shrink: 0;
+
+    border: none;
+
+    background: white;
+
+    color: #333;
+
+    padding: 12px 21px;
+
+    border-radius: 50px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.07);
+
+    transition: 0.2s;
+}
+
+
+.categories button:hover {
+
+    background: #171717;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+#products {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(240px, 1fr)
+        );
+
+    gap: 22px;
+}
+
+
+.product {
+
+    background: white;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.07);
+
+    transition: 0.25s;
+
+    border: 1px solid #eeeeee;
+}
+
+
+.product:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.12);
+}
+
+
+/* صورة المنتج */
+
+.product-image {
+
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+
+    display: block;
+
+    background: #eeeeee;
+}
+
+
+/* معلومات المنتج */
+
+.product-info {
+
+    padding: 20px;
+}
+
+
+.product-info h3 {
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+    margin-bottom: 7px;
+}
+
+
+.product-info p {
+
+    color: #777;
+
+    font-size: 14px;
+
+    min-height: 45px;
+
+    margin-bottom: 12px;
+}
+
+
+/* السعر */
+
+.price {
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    margin-bottom: 15px;
+}
+
+
+/* زر إضافة */
+
+.product-info button {
+
+    width: 100%;
+
+    border: none;
+
+    background: #171717;
+
+    color: white;
+
+    padding: 13px;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.product-info button:hover {
+
+    background: #333;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   CART
+========================= */
+
+.cart {
+
+    margin-top: 55px;
+
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.07);
+
+    border: 1px solid #eeeeee;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+.cart h2 {
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+
+.cart-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px 0;
+
+    border-bottom:
+        1px solid #eeeeee;
+}
+
+
+.quantity-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.quantity-controls button {
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    background: #171717;
+
+    color: white;
+
+    border-radius: 9px;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+.quantity-controls span {
+
+    min-width: 25px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+
+/* المجموع */
+
+.cart-total {
+
+    margin-top: 22px;
+
+    padding-top: 18px;
+
+    border-top:
+        2px solid #eeeeee;
+
+    font-size: 21px;
+
+    font-weight: 800;
+}
+
+
+/* =========================
+   ORDER FORM
+========================= */
+
+.order-form {
+
+    margin-top: 25px;
+
+    position: relative;
+
+    z-index: 20;
+}
+
+
+.order-form label {
+
+    display: block;
+
+    margin-top: 16px;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+.order-form input,
+.order-form textarea {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 12px;
+
+    background: #fafafa;
+
+    font-size: 16px;
+
+    font-family: inherit;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+
+.order-form input:focus,
+.order-form textarea:focus {
+
+    border-color: #222;
+
+    background: white;
+}
+
+
+.order-form textarea {
+
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.order-button {
+
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background: #25D366;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 30;
+
+    pointer-events: auto;
+
+    transition: 0.2s;
+}
+
+
+.order-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(37,211,102,0.25);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+
+        min-height: 68vh;
+
+        padding: 40px 18px;
+    }
+
+
+    .logo {
+
+        width: 105px;
+
+        height: 105px;
+
+        font-size: 17px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 34px;
+    }
+
+
+    .hero p {
+
+        font-size: 16px;
+    }
+
+
+    main {
+
+        padding: 40px 14px;
+    }
+
+
+    main > h2 {
+
+        font-size: 27px;
+
+        margin-bottom: 24px;
+    }
+
+
+    #products {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .product-image {
+
+        height: 240px;
+    }
+
+
+    .product-info {
+
+        padding: 18px;
+    }
+
+
+    .cart {
+
+        padding: 20px;
+
+        border-radius: 18px;
+    }
+
+
+    .cart-item {
+
+        flex-wrap: wrap;
+    }
+
+
+    .cart-item > strong:last-child {
+
+        margin-right: auto;
+    }
+
+}
+/* =========================
+   FLOATING CART
+========================= */
+
+.floating-cart {
+
+    position: fixed;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: calc(100% - 30px);
+
+    max-width: 500px;
+
+    padding: 15px 22px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #171717;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    display: none;
+
+    transition: 0.25s;
+}
+
+
+.floating-cart:hover {
+
+    transform:
+        translateX(-50%)
+        translateY(-3px);
+}
+
+
+@media (min-width: 601px) {
+
+    .floating-cart {
+
+        max-width: 420px;
+
+    }
+
+}
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+    margin-bottom: 25px;
+}
+
+.search-box input {
+
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 15px;
+
+    background: white;
+
+    font-size: 16px;
+
+    font-family: inherit;
+
+    outline: none;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.05);
+}
+
+.search-box input:focus {
+    border-color: #222;
+}
+/* =========================
+   ORDER CONFIRMATION
+========================= */
+
+.order-confirmation {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 10000;
+}
+
+.confirmation-box {
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 24px;
+    padding: 28px 22px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.confirmation-box h2 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.close-confirmation {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #f1f1f1;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.order-number {
+    text-align: center;
+    background: #f7f7f7;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.order-number strong {
+    display: block;
+    font-size: 19px;
+    margin-top: 4px;
+}
+
+.confirmation-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 13px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.confirmation-item-info {
+    flex: 1;
+}
+
+.confirmation-item-name {
+    font-weight: 800;
+}
+
+.confirmation-item-quantity {
+    color: #777;
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.confirmation-item-price {
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.confirmation-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 2px solid #eee;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.confirmation-actions {
+    display: grid;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.edit-order-button,
+.confirm-order-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 13px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.edit-order-button {
+    background: #eeeeee;
+    color: #222;
+}
+
+.confirm-order-button {
+    background: #25D366;
+    color: white;
+}
+
+.edit-order-button:hover,
+.confirm-order-button:hover {
+    transform: translateY(-2px);
+}
+/* =========================
+   LANGUAGE SWITCHER
+========================= */
+
+.language-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+}
+
+.language-switcher button {
+    border: none;
+    background: rgba(255,255,255,0.12);
+    color: white;
+    padding: 9px 13px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: 0.2s;
+}
+
+.language-switcher button:hover {
+    background: white;
+    color: #111;
+}
+
+.language-switcher button.active {
+    background: white;
+    color: #111;
+    font-weight: 800;
+}
+
+@media (max-width: 600px) {
+
+    .language-switcher {
+        top: 15px;
+        right: 15px;
+    }
+
+    .language-switcher button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+}
+/* =========================
+   LANGUAGE
+========================= */
+
+const translations = {
+
+    ar: {
+
+        title: "روستن",
+
+        subtitle:
+            "عصائر ومشروبات بطابع خاص",
+
+        menuButton:
+            "عرض المنيو",
+
+        menuTitle:
+            "قائمة العصائر",
+
+        categories: {
+
+            smoothie: "سموثي",
+            fresh: "عصائر طازجة",
+            mojito: "موخيتو",
+            special: "خلطات خاصة",
+            nescafe: "نسكافيه",
+            custom: "حسب الطلب"
+
+        },
+
+        addToCart:
+            "إضافة للطلب",
+
+        cartTitle:
+            "طلبك",
+
+        emptyCart:
+            "لا توجد منتجات",
+
+        total:
+            "المجموع:",
+
+        name:
+            "الاسم",
+
+        namePlaceholder:
+            "اكتب اسمك",
+
+        phone:
+            "رقم الهاتف",
+
+        phonePlaceholder:
+            "مثلاً 0912345678",
+
+        notes:
+            "ملاحظات",
+
+        notesPlaceholder:
+            "مثلاً بدون سكر، ثلج قليل...",
+
+        whatsapp:
+            "إرسال الطلب عبر WhatsApp"
+
+    },
+
+
+    en: {
+
+        title: "ROASTEN",
+
+        subtitle:
+            "Fresh juices & special drinks",
+
+        menuButton:
+            "View Menu",
+
+        menuTitle:
+            "Juice Menu",
+
+        categories: {
+
+            smoothie: "Smoothies",
+            fresh: "Fresh Juices",
+            mojito: "Mojito",
+            special: "Special Mixes",
+            nescafe: "Nescafe",
+            custom: "Custom"
+
+        },
+
+        addToCart:
+            "Add to Order",
+
+        cartTitle:
+            "Your Order",
+
+        emptyCart:
+            "No products",
+
+        total:
+            "Total:",
+
+        name:
+            "Name",
+
+        namePlaceholder:
+            "Enter your name",
+
+        phone:
+            "Phone Number",
+
+        phonePlaceholder:
+            "e.g. 0912345678",
+
+        notes:
+            "Notes",
+
+        notesPlaceholder:
+            "e.g. No sugar, less ice...",
+
+        whatsapp:
+            "Send Order via WhatsApp"
+
+    }
+
+};
+
+
+let currentLanguage = "ar";
+
+
+function setLanguage(language) {
+
+    currentLanguage =
+        language;
+
+    const t =
+        translations[language];
+
+
+    /* اتجاه الصفحة */
+
+    document.documentElement.lang =
+        language;
+
+    document.documentElement.dir =
+        language === "ar"
+            ? "rtl"
+            : "ltr";
+
+
+    /* العنوان */
+
+    document.querySelector(
+        ".hero h1"
+    ).textContent =
+        t.title;
+
+
+    document.querySelector(
+        ".hero p"
+    ).textContent =
+        t.subtitle;
+
+
+    document.querySelector(
+        ".hero-button"
+    ).textContent =
+        t.menuButton;
+
+
+    document.querySelector(
+        "main > h2"
+    ).textContent =
+        t.menuTitle;
+
+
+    /* التصنيفات */
+
+    const categoryButtons =
+        document.querySelectorAll(
+            ".categories button"
+        );
+
+
+    const categoryNames = [
+        "smoothie",
+        "fresh",
+        "mojito",
+        "special",
+        "nescafe",
+        "custom"
+    ];
+
+
+    categoryButtons.forEach(
+        (button, index) => {
+
+            button.textContent =
+                t.categories[
+                    categoryNames[index]
+                ];
+
+        }
+    );
+
+
+    /* السلة */
+
+    document.querySelector(
+        ".cart h2"
+    ).textContent =
+        t.cartTitle;
+
+
+    document.querySelector(
+        ".cart-total"
+    ).childNodes[0].textContent =
+        ` ${t.total} `;
+
+
+    /* الاسم */
+
+    document.querySelector(
+        'label[for="customer-name"]'
+    ).textContent =
+        t.name;
+
+
+    document.getElementById(
+        "customer-name"
+    ).placeholder =
+        t.namePlaceholder;
+
+
+    /* الهاتف */
+
+    document.querySelector(
+        'label[for="customer-phone"]'
+    ).textContent =
+        t.phone;
+
+
+    document.getElementById(
+        "customer-phone"
+    ).placeholder =
+        t.phonePlaceholder;
+
+
+    /* الملاحظات */
+
+    document.querySelector(
+        'label[for="order-notes"]'
+    ).textContent =
+        t.notes;
+
+
+    document.getElementById(
+        "order-notes"
+    ).placeholder =
+        t.notesPlaceholder;
+
+
+    /* WhatsApp */
+
+    document.getElementById(
+        "whatsapp-button"
+    ).textContent =
+        t.whatsapp;
+
+
+    /* الأزرار */
+
+    document.getElementById(
+        "arabic-button"
+    ).classList.toggle(
+        "active",
+        language === "ar"
+    );
+
+
+    document.getElementById(
+        "english-button"
+    ).classList.toggle(
+        "active",
+        language === "en"
+    );
+
+
+    /* إعادة عرض المنتجات */
+
+    const activeCategory =
+        window.currentCategory ||
+        "smoothie";
+
+
+    showCategory(
+        activeCategory
+    );
+
+
+    /* تحديث السلة */
+
+    updateCart();
+
+}
